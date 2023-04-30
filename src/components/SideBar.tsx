@@ -11,7 +11,7 @@ const SideBar = () => {
 
   return (
     <nav
-      className={`bg-black h-screen fixed w-52 flex flex-col justify-normal px-2 items-center   ${
+      className={`bg-black z-20 h-screen fixed w-52 flex flex-col justify-normal px-2 items-center   ${
         nav ? "" : "hidden"
       } sm:block`}
     >

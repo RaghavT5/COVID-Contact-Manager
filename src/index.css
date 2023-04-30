@@ -3,3 +3,22 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.MapContainer {
+  width: 1280px;
+  height: 675px;
+}
+
+@media screen and (max-width: 768px) {
+  .MapContainer {
+    width: 800px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .MapContainer {
+    width: 400px;
+    height: 200px;
+  }
+}

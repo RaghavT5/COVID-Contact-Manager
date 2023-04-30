@@ -17,13 +17,15 @@ export const Contacts = () => {
   console.log(contacts.length);
 
   return (
-    <div className="w-full h-full flex flex-col place-items-center mt-18 pt-20">
+    <div className="w-full h-full flex flex-col place-items-center mt-18 pt-20 sm:mx-2 md:mx-2">
       <div className="py-4">
-        <h1 className="text-5xl font-bold text-center">Recent Contacts</h1>
+        <h1 className="lg:text-5xl font-bold text-center text-2xl md:text-4xl">
+          Recent Contacts
+        </h1>
         <div className="py-4">
           <Link
             to="/contact/add-contact"
-            className=" text-4xl font-medium mt-20 bg-blue-500 text-white px-4 py-4 rounded-md hover:bg-blue-600 mx-auto block w-max"
+            className="lg:text-4xl md:text-2xl text-xl font-medium mt-20 bg-blue-500 text-white px-4 py-4 rounded-md hover:bg-blue-600 mx-auto block w-max"
           >
             Create Contact
           </Link>

@@ -60,7 +60,9 @@ const Map = () => {
         >
           <Popup>
             <div className="w-32">
-              <h3 className="text-xl font-bold mb-3">{countryData.country}</h3>
+              <h3 className="text-xl font-bold mb-3 md:text-lg sm:text-md">
+                {countryData.country}
+              </h3>
               <div>
                 <div className="text-lg mb-1">
                   <div className="font-bold">Cases:</div>

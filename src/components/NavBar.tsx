@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaAddressBook, FaChartLine } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 
@@ -44,12 +43,12 @@ const NavBar = () => {
 
             <ul>
               <li onClick={handleNav} className="p-4 text-4xl flex flex-col">
-                <Link to="/">Contact</Link>
+                <Link to="/contacts">Contact</Link>
               </li>
             </ul>
             <ul>
               <li onClick={handleNav} className="p-4 text-4xl flex flex-col">
-                <Link to="/">Dashboard</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
             </ul>
           </div>

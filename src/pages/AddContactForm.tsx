@@ -36,7 +36,7 @@ export const AddContactForm = () => {
     }, 2000);
   };
   return (
-    <div className="flex justify-center items-center h-screen mt-8">
+    <div className="flex justify-center items-center h-screen mt-8 md:mx-2">
       <div className="md:flex">
         <div className="md:flex-shrink-0">
           <div className="w-full max-w-sm">
