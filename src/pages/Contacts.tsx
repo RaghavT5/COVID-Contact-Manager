@@ -31,9 +31,9 @@ export const Contacts = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-grow overflow-y-auto p-4">
+      <div className="flex-grow overflow-y-auto p-4 place-items-center">
         {contacts.length ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {contacts.map((contact: Contact) => (
               <ContactCard
                 key={contact.id}
