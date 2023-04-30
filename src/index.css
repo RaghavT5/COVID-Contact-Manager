@@ -12,13 +12,13 @@
 @media screen and (max-width: 768px) {
   .MapContainer {
     width: 800px;
-    height: 400px;
+    height: 432px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 567px) {
   .MapContainer {
-    width: 400px;
-    height: 200px;
+    width: 384px;
+    height: 216px;
   }
 }

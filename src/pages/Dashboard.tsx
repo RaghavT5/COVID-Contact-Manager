@@ -14,7 +14,7 @@ const Dashboard = () => {
         <div className="w-full lg:w-1/2 mb-4 px-6">
           <Chart />
         </div>
-        <h2 className="text-5xl font-bold mt-20 mb-7 md:text-4xl sm:text-2xl px-6">
+        <h2 className="text-5xl font-bold mt-20 mb-7 md:text-4xl sm:text-2xl">
           Country-Wise Data
         </h2>
         <div className="place-items-center lg:w-auto mt-4 ml-36 mb-20 z-0">
