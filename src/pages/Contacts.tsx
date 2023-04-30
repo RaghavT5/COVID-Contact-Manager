@@ -18,11 +18,11 @@ export const Contacts = () => {
 
   return (
     <div className="w-full h-full flex flex-col place-items-center mt-18 pt-20 sm:mx-2 md:mx-2">
-      <div className="py-4">
-        <h1 className="lg:text-5xl font-bold text-center text-2xl md:text-4xl">
+      <div className="py-4 mt-4">
+        <h1 className="md:text-5xl font-bold text-center text-4xl">
           Recent Contacts
         </h1>
-        <div className="py-4">
+        <div className="pb-2">
           <Link
             to="/contact/add-contact"
             className="lg:text-4xl md:text-2xl text-xl font-medium mt-20 bg-blue-500 text-white px-4 py-4 rounded-md hover:bg-blue-600 mx-auto block w-max"
@@ -33,7 +33,7 @@ export const Contacts = () => {
       </div>
       <div className="flex-grow overflow-y-auto p-4">
         {contacts.length ? (
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {contacts.map((contact: Contact) => (
               <ContactCard
                 key={contact.id}

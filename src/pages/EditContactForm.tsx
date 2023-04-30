@@ -40,6 +40,7 @@ export const EditContactForm = () => {
       toast.warning("All fields are required.");
       return;
     }
+
     dispatch(updateContact({ ...formData, id: parsedId }));
     toast.success("Contact updated successfully!");
     setTimeout(() => {
@@ -148,8 +149,8 @@ export const EditContactForm = () => {
                   Update Contact
                 </button>
                 <button
-                  type="submit"
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+                  onClick={() => navigate("/contacts")}
                 >
                   Cancel
                 </button>
