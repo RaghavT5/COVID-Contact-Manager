@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Dashboard from "./pages/Dashboard";
+import { QueryClient, QueryClientProvider } from "react-query";
+import SideBar from "./components/SideBar";
+import { Contacts } from "./pages/Contacts";
+import { AddContactForm } from "./pages/AddContactForm";
+import { EditContactForm } from "./pages/EditContactForm";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Home from "./pages/Home";
+import ContactDetails from "./pages/ContactDetails";
 
-function App() {
+const queryClient = new QueryClient();
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <NavBar />
+        <SideBar />
+        <ToastContainer
+          hideProgressBar={true}
+          theme="colored"
+          className="my-24"
+          autoClose={1000}
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/contact/add-contact" element={<AddContactForm />} />
+          <Route
+            path="/contact/edit-contact/:id"
+            element={<EditContactForm />}
+          />
+          <Route path="/contacts/:id" element={<ContactDetails />} />
+        </Routes>
+      </QueryClientProvider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
