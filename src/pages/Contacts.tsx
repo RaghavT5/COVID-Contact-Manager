@@ -44,7 +44,7 @@ export const Contacts = () => {
             ))}
           </div>
         ) : (
-          <div className="bg-green-500 px-5 py-14 flex items-center mt-28">
+          <div className="bg-green-500 mx-2 px-3 py-14 flex items-center mt-28">
             <FaTimesCircle size={72} className="text-white mr-4" />
             <p className="text-white text-2xl font-bold">
               No contacts found. <br />
