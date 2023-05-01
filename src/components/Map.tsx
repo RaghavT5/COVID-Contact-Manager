@@ -19,7 +19,9 @@ interface ResponseData {
   data: CountryData[];
 }
 
+// This component renders a map displaying Covid-19 cases data for countries.
 const Map = () => {
+  // Fetch data from the API using react-query.
   const { data } = useQuery<ResponseData>("countriesData", async () => {
     const response = await fetch("https://disease.sh/v3/covid-19/countries");
     if (!response.ok) {
@@ -29,10 +31,12 @@ const Map = () => {
     return { data: responseData };
   });
 
+  // Render loading message if data is not yet available.
   if (!data) {
     return <div>Loading...</div>;
   }
 
+  // Render map container with markers for each country.
   return (
     <MapContainer
       center={[0, 0]}
@@ -47,6 +51,8 @@ const Map = () => {
       className="ml-40 lg:ml-0 md:ml-56"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+      {/* Map over the data and render a marker for each country. */}
       {data.data.map((countryData) => (
         <Marker
           key={countryData.country}
@@ -59,6 +65,7 @@ const Map = () => {
             })
           }
         >
+          {/* Display country details in a popup. */}
           <Popup>
             <div className="w-32">
               <h3 className="text-xl font-bold mb-3 md:text-lg sm:text-md">

@@ -1,6 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
 import { useQuery } from "react-query";
 
+// Function to fetch graph data
 const fetchGraphData = async () => {
   const response = await fetch(
     "https://disease.sh/v3/covid-19/historical/all?lastdays=all"
@@ -9,6 +10,7 @@ const fetchGraphData = async () => {
   const { cases } = data;
   const graphData = [];
 
+  // Convert data into format compatible with LineChart
   for (const date in cases) {
     graphData.push({ date, cases: cases[date] });
   }
@@ -16,7 +18,9 @@ const fetchGraphData = async () => {
   return graphData;
 };
 
+// Component for rendering the line chart
 const Chart = () => {
+  // Use React Query to fetch the graph data
   const { data } = useQuery("graphData", fetchGraphData);
 
   return (
@@ -25,12 +29,12 @@ const Chart = () => {
       <LineChart
         width={960}
         height={540}
-        data={data}
+        data={data} // Pass in the data fetched from the API
         margin={{ top: 30, right: 10, bottom: 20, left: 40 }}
         className="lg:ml-0 md:ml-52"
       >
         <XAxis
-          dataKey="date"
+          dataKey="date" // Specify the data key for the X-axis
           stroke="#9CA3AF"
           tick={{ fontSize: 13, fontWeight: "bold" }}
         />
@@ -49,7 +53,7 @@ const Chart = () => {
         <Legend />
         <Line
           type="monotone"
-          dataKey="cases"
+          dataKey="cases" // Specify the data key for the Y-axis
           stroke="#3B82F6"
           strokeWidth={3}
           dot={{ r: 5, strokeWidth: 2, fill: "#fff", stroke: "#3B82F6" }}
@@ -65,4 +69,4 @@ const Chart = () => {
   );
 };
 
-export default Chart;
+export default Chart; // Export the Chart component

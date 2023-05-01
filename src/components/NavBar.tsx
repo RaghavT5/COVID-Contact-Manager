@@ -3,8 +3,10 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 
 const NavBar = () => {
+  // State for showing/hiding mobile menu
   const [nav, setNav] = useState(false);
 
+  // Function to toggle mobile menu
   const handleNav = () => {
     setNav(!nav);
   };
@@ -12,9 +14,9 @@ const NavBar = () => {
   return (
     <div>
       {/* NavBar */}
-
       <div className="bg-black fixed left-0 top-0 w-full z-20 ease-in duration-300 ">
         <div className="max-w-[1920px] m-auto flex justify-between lg:justify-center md:justify-center items-center p-4 text-white px-10">
+          {/* Logo */}
           <Link to="/">
             <h1 className="font-bold lg:text-4xl md:text-3xl text-2xl cursor-pointer">
               COVID Contact Manager
@@ -22,7 +24,6 @@ const NavBar = () => {
           </Link>
 
           {/* Mobile Button */}
-
           <div onClick={handleNav} className="block sm:hidden z-10">
             {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
           </div>
@@ -35,6 +36,7 @@ const NavBar = () => {
                 : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 flex-col"
             }
           >
+            {/* Mobile menu items */}
             <ul>
               <li onClick={handleNav} className="p-4 text-4xl flex flex-col">
                 <Link to="/">Home</Link>
