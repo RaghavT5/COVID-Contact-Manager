@@ -40,8 +40,8 @@ const Map = () => {
       minZoom={1.5}
       maxZoom={10}
       maxBounds={[
-        [-180, -270],
-        [180, 270],
+        [-120, -270],
+        [120, 270],
       ]}
       trackResize={true}
       className="ml-40 lg:ml-0 md:ml-56"
