@@ -61,6 +61,12 @@ npm start
 
 This will start the app on [http://localhost:3000](http://localhost:3000).
 
+## **Live App**
+
+This app is hosted live on Netlify. You can visit the app at [https://covid-contact-manager.netlify.app](https://covid-contact-manager.netlify.app).
+
+The app is automatically deployed to Netlify when changes are pushed to the `main` branch on GitHub. This makes it easy to keep the live app up-to-date with the latest changes to the codebase.
+
 ## **Features**
 
 The app includes the following pages and features:
