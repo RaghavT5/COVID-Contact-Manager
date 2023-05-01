@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-50 lg:w-screen md:w-3/4 lg:ml-0 md:ml-48">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-50 lg:w-screen md:w-3/4 lg:ml-0 lg:pl-10 md:ml-48">
       <h1 className="text-5xl font-bold mb-4 text-center text-blue-500">
         Welcome to COVID Contact Manager
       </h1>
