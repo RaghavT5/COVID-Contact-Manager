@@ -11,7 +11,7 @@ const SideBar = () => {
 
   return (
     <nav
-      className={`bg-black z-20 h-screen fixed w-52 flex flex-col justify-normal px-2 items-center   ${
+      className={`bg-black z-20 h-screen fixed lg:w-52 flex flex-col justify-normal px-2 items-center md:w-48  ${
         nav ? "" : "hidden"
       } sm:block`}
     >
@@ -19,7 +19,7 @@ const SideBar = () => {
         <li className="p-2">
           <Link
             to="/contacts"
-            className=" text-3xl text-white hover:text-gray-300 flex items-center hover:scale-105 duration-300"
+            className=" text-3xl text-white hover:text-gray-300 flex items-center hover:scale-105 duration-300 md:text-2xl"
           >
             <FaAddressBook className="mr-2" />
             Contacts
@@ -28,7 +28,7 @@ const SideBar = () => {
         <li className="p-2 pt-10">
           <Link
             to="/dashboard"
-            className="text-3xl text-white hover:text-gray-300 flex items-center hover:scale-105 duration-300"
+            className="text-3xl text-white hover:text-gray-300 flex items-center hover:scale-105 duration-300 md:text-2xl"
           >
             <FaChartLine className="mr-2" />
             Dashboard

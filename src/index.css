@@ -4,21 +4,28 @@
 
 @import "tailwindcss/utilities";
 
-.MapContainer {
-  width: 1280px;
+.leaflet-container {
+  width: 1240px;
   height: 675px;
 }
 
+@media screen and (max-width: 940px) {
+  .leaflet-container {
+    width: 768px;
+    height: 432px;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .MapContainer {
-    width: 800px;
+  .leaflet-container {
+    width: 640px;
     height: 432px;
   }
 }
 
 @media screen and (max-width: 567px) {
-  .MapContainer {
-    width: 384px;
-    height: 216px;
+  .leaflet-container {
+    width: 548px;
+    height: 308px;
   }
 }

@@ -36,14 +36,15 @@ const Map = () => {
   return (
     <MapContainer
       center={[0, 0]}
-      zoom={2}
-      minZoom={2}
+      zoom={1.5}
+      minZoom={1.5}
       maxZoom={10}
       maxBounds={[
-        [-90, -180],
-        [90, 180],
+        [-180, -270],
+        [180, 270],
       ]}
-      style={{ width: "1280px", height: "675px" }}
+      trackResize={true}
+      className="ml-40 lg:ml-0 md:ml-56"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {data.data.map((countryData) => (

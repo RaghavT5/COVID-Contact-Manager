@@ -21,12 +21,13 @@ const Chart = () => {
 
   return (
     <div className="justify-center items-center place-items-center">
-      <h2 className="text-2xl font-bold mb-4">Cases Fluctuations</h2>
+      <h2 className="text-2xl font-bold mb-4 md:ml-0">Cases Fluctuations</h2>
       <LineChart
         width={960}
         height={540}
         data={data}
         margin={{ top: 30, right: 10, bottom: 20, left: 40 }}
+        className="lg:ml-0 md:ml-52"
       >
         <XAxis
           dataKey="date"
