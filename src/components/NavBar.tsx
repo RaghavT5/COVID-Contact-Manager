@@ -13,7 +13,7 @@ const NavBar = () => {
     <div>
       {/* NavBar */}
 
-      <div className="bg-black fixed left-0 top-0 w-full z-20 ease-in duration-300 ">
+      <div className="bg-black fixed left-0 top-0 w-full z-25 ease-in duration-300 ">
         <div className="max-w-[1920px] m-auto flex justify-between lg:justify-center md:justify-center items-center p-4 text-white px-10">
           <Link to="/">
             <h1 className="font-bold lg:text-4xl md:text-3xl text-2xl cursor-pointer">
