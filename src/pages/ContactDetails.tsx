@@ -5,31 +5,38 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { RootState } from "../redux/store";
 
+// Define the shape of the data that the component expects
 interface ContactDetailsData {
   firstName: string;
   lastName: string;
   status: string;
 }
 
+// Define the ContactDetails component
 export const ContactDetails = () => {
+  // Extract the id from the URL params
   const { id } = useParams<{ id?: string }>();
   const parsedId = id ? parseInt(id, 10) : 0;
 
+  // Set up the initial state of the form data
   const [formData, setFormData] = useState<ContactDetailsData>({
     firstName: "",
     lastName: "",
     status: "active",
   });
 
+  // Select the contacts data from the Redux store
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
   const currentContact = contacts.find((contact) => contact.id === +parsedId);
 
+  // Update the form data if a new contact is selected
   useEffect(() => {
     if (currentContact) {
       setFormData(currentContact);
     }
   }, [currentContact]);
 
+  // Render a message if no contact is found
   if (!currentContact) {
     return (
       <div className="flex justify-center items-center h-screen mt-8">
@@ -55,6 +62,7 @@ export const ContactDetails = () => {
     );
   }
 
+  // Render the ContactDetails
   return (
     <div className="flex justify-center items-center h-screen mt-8">
       <div className="md:flex">

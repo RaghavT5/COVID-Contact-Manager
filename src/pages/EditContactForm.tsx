@@ -6,16 +6,20 @@ import { FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { RootState } from "../redux/store";
 
+// Define interface for form data
 interface EditContactFormData {
   firstName: string;
   lastName: string;
   status: string;
 }
 
+// Define component for editing contacts
 export const EditContactForm = () => {
+  // Get contact id from URL
   const { id } = useParams<{ id?: string }>();
   const parsedId = id ? parseInt(id, 10) : 0;
 
+  // Define state for form data
   const [formData, setFormData] = useState<EditContactFormData>({
     firstName: "",
     lastName: "",
@@ -25,29 +29,36 @@ export const EditContactForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Get all contacts from the Redux store
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
+  // Find the current contact by id
   const currentContact = contacts.find((contact) => contact.id === +parsedId);
 
+  // Set form data to current contact when component mounts
   useEffect(() => {
     if (currentContact) {
       setFormData(currentContact);
     }
   }, [currentContact]);
 
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Validate form data
     if (!formData.firstName || !formData.lastName || !formData.status) {
       toast.warning("All fields are required.");
       return;
     }
-
+    // Adding the Chart component to the dashboard
     dispatch(updateContact({ ...formData, id: parsedId }));
+    // Show success toast and navigate to contacts page
     toast.success("Contact updated successfully!");
     setTimeout(() => {
       navigate("/contacts");
     }, 2000);
   };
 
+  // Render form
   return (
     <div className="flex justify-center items-center h-screen mt-8">
       <div className="md:flex">
