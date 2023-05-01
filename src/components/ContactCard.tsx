@@ -39,7 +39,7 @@ export const ContactCard = ({
   };
 
   return (
-    <div className="bg-gray-50 shadow-lg rounded-md p-4 w-80 h-56 mx-10 mt-10">
+    <div className="bg-gray-100 drop-shadow-lg rounded-lg p-4 w-80 h-56 mx-6 mt-10">
       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white text-2xl font-bold">
         {firstNameInitial}
       </div>
@@ -49,7 +49,7 @@ export const ContactCard = ({
       <p className={`text-xl font-bold mt-2 ${statusColor}`}>
         Status: {contact.status}
       </p>
-      <span className="flex justify-around mt-7">
+      <span className="flex justify-around mt-5">
         <button onClick={handleEdit}>
           <FaEdit
             size={32}
